@@ -1,6 +1,3 @@
-docker run -ti -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 local/c7-systemd-httpd
-docker build --rm -t centos7-systemd - < mydockerfile
-
 # HRM 
 
 This is a instruction to set up enviroment to work in HRM-NAL project
@@ -36,30 +33,31 @@ Now, we need docker and docker-compose in Centos, check [here](https://www.digit
  * `cd home` 
  * `yum install git` 
  *Clone Laravel project:
-  Example: `git clone https://github.com/laravel/laravel.git laravel-app` 
+`git clone https://github.com/laravel/laravel.git laravel-app` 
  * Move into the **laravel-app** directory:
-      `cd laravel-app`
+      `$ cd laravel-app`
 #### Step 2 — Creating the Docker-compose.yml file
  * Create [*docker-compose.yml*](https://github.com/thimcusu/docker-hrm/blob/main/docker-compose.yml) file
 ```nano docker-compose.yml
 ```
 #### Step 3 — Creating the Dockerfile
-       Create [Dockerfile](https://github.com/thimcusu/docker-hrm/blob/main/php/Dockerfile): 
-     `nano ~/laravel-app/Dockerfile`
+  * Create [Dockerfile](https://github.com/thimcusu/docker-hrm/blob/main/php/Dockerfile): 
+     `$ nano ~/laravel-app/Dockerfile`
 #### Step 4 — Configuring PHP
   * Create a **php** direction: `mkdir php`
   * Open [local.ini](https://github.com/thimcusu/docker-hrm/blob/main/php/local.ini) file: `nano /php/local.ini`
 #### Step 5 — Configuring Nginx
- Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/nginx/app.conf) file: 
-        - `mkdir -p /nginx/conf.d/`
-        - `nano /nginx/conf.d/app.conf`
+  * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/nginx/app.conf) file: 
+        $ `mkdir -p /nginx/conf.d/`
+        $ `nano /nginx/conf.d/app.conf`
 #### Step 6 — Configuring MySQL
-  * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/mysql/my.cnf)
-        - `mkdir mysql` && `cd mysql`
-        - `nano my.conf`
+  * Create [mysql/my.cnf](https://github.com/thimcusu/docker-hrm/blob/main/mysql/my.cnf)
+        $ `mkdir mysql` 
+        $ `cd mysql`
+        $ `nano my.conf`
 ### Step 7 - Modifying Environment Settings and Running the Containers
-        - `cp .env.example .env`
-        - `nano .env`
+        $ `cp .env.example .env`
+        $ `nano .env`
 ## Run Containers
 ```
     docker-compose up -d 
