@@ -25,17 +25,18 @@ When we had the Dockerfile at the direct folder [here](https://github.com/thimcu
 	sudo docker exec -it '[container_name/container_id]' /bin/bash
 ```
 ## Installation Docker in virtual Centos
-Now, we need docker and docker-compose in Centos, check [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7). And also, [docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7)
+Now, we need docker and docker-compose in Centos: [docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7), [docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7)
 
 ### Docker for Laravel project
  **Note**: You might need install some packages. Run `yum install '<package_name>'` 
-#### Step 1 - Direction laravel project 
+#### Step 1 -  Downloading Laravel and Installing Dependencies 
  * `cd home` 
  * `yum install git` 
  *Clone Laravel project:
 `git clone https://github.com/laravel/laravel.git laravel-app` 
  * Move into the **laravel-app** directory:
       `$ cd laravel-app`
+ *Next, use Docker's [compose](https://hub.docker.com/_/composer) image to mount the directories that you will need for your Laravel project
 #### Step 2 — Creating the Docker-compose.yml file
  * Create [*docker-compose.yml*](https://github.com/thimcusu/docker-hrm/blob/main/docker-compose.yml) file
 ```nano docker-compose.yml
