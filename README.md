@@ -33,27 +33,28 @@ Now, we need docker and docker-compose in Centos, check [here](https://www.digit
 ### Docker for Laravel project
  **Note**: You might need install some packages. Run `yum install '<package_name>'` 
 #### Step 1 - Direction laravel project 
-    * `cd home` 
-    * `yum install git` 
-    * Clone Laravel project:
-      Example: `git clone https://github.com/laravel/laravel.git laravel-app` 
-    * Move into the **laravel-app** directory:
+ * `cd home` 
+ * `yum install git` 
+ *Clone Laravel project:
+  Example: `git clone https://github.com/laravel/laravel.git laravel-app` 
+ * Move into the **laravel-app** directory:
       `cd laravel-app`
 #### Step 2 — Creating the Docker-compose.yml file
-    * Create [*docker-compose.yml*](https://github.com/thimcusu/docker-hrm/blob/main/docker-compose.yml) file
-     `nano docker-compose.yml`
+ * Create [*docker-compose.yml*](https://github.com/thimcusu/docker-hrm/blob/main/docker-compose.yml) file
+```nano docker-compose.yml
+```
 #### Step 3 — Creating the Dockerfile
        Create [Dockerfile](https://github.com/thimcusu/docker-hrm/blob/main/php/Dockerfile): 
      `nano ~/laravel-app/Dockerfile`
 #### Step 4 — Configuring PHP
-    * Create a **php** direction: `mkdir php`
-    * Open [local.ini](https://github.com/thimcusu/docker-hrm/blob/main/php/local.ini) file: `nano /php/local.ini`
+  * Create a **php** direction: `mkdir php`
+  * Open [local.ini](https://github.com/thimcusu/docker-hrm/blob/main/php/local.ini) file: `nano /php/local.ini`
 #### Step 5 — Configuring Nginx
-    * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/nginx/app.conf) file: 
+ Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/nginx/app.conf) file: 
         - `mkdir -p /nginx/conf.d/`
         - `nano /nginx/conf.d/app.conf`
 #### Step 6 — Configuring MySQL
-    * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/my.cnf) file: 
+  * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/mysql/my.cnf)
         - `mkdir mysql` && `cd mysql`
         - `nano my.conf`
 ### Step 7 - Modifying Environment Settings and Running the Containers
