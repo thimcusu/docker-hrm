@@ -51,7 +51,11 @@ Now, we need docker and docker-compose in Centos, check [here](https://www.digit
         $ `mkdir -p /nginx/conf.d/`
         $ `nano /nginx/conf.d/app.conf`
 #### Step 6 — Configuring MySQL
+<<<<<<< HEAD
   * Create [mysql/my.cnf](https://github.com/thimcusu/docker-hrm/blob/main/mysql/my.cnf)
+=======
+  * Create [nginx/conf.d/app.conf](https://github.com/thimcusu/docker-hrm/blob/main/mysql/my.cnf)
+>>>>>>> refs/remotes/origin/main
         $ `mkdir mysql` 
         $ `cd mysql`
         $ `nano my.conf`
